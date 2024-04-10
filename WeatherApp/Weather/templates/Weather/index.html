@@ -10,6 +10,32 @@
 </head>
 
 <body>
-    <h1>Погодное приложение</h1>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+
+        <span class="fs-4">WeatherApp</span>
+      </a>
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Главная</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Информация</a>
+      </nav>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-5 offset-1">
+                <form action="">
+                    <label for="city">Город</label>
+                    <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
+                    <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-danger">
+                </form>
+            </div>
+            <div class="col-4 offset-1">
+                <h1>Информация</h1>
+                <div class="alert alert-danger">
+                    Погода в Минске
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
