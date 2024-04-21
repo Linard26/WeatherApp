@@ -16,21 +16,23 @@
         <span class="fs-4">WeatherApp</span>
       </a>
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Главная</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Информация</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'home'%}">Главная</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'information'%}">Информация</a>
       </nav>
     </div>
     <div class="container mt-5">
         <div class="row">
             <div class="col-5 offset-1">
-                <form action="">
+                <form action="" method="post">
+                    {% csrf_token%}
                     <label for="city">Город</label>
-                    <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
+                    {{ form.name }}
                     <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-danger">
                 </form>
             </div>
             <div class="col-4 offset-2">
                 <h1>Информация</h1>
+                {% for info in all_info%}
                 <div class="alert alert-danger">
                     <div class="row">
                         <div class="col-9">
@@ -42,6 +44,7 @@
                         </div>
                     </div>
                 </div>
+                {%endfor%}
             </div>
         </div>
     </div>
